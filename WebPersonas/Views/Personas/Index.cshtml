@@ -1,0 +1,51 @@
+﻿@model List<Personas>
+@{
+    ViewData["Title"] = "Personas";
+}
+
+<h1>Index</h1>
+<div class="container shadow p-5">
+    @if (TempData["SuccessMsg"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMsg"]
+        </div>
+    }
+    <h1 class="text-center">Lista de Personas</h1>
+
+    <div class="col mb-3">
+        <a asp-controller="Personas" asp-action="Create" class="btn btn-primary">Agregar Persona</a>
+    </div>
+    <table class="table table-light table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Email</th>               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="15%">
+                        @item.id_persona
+                    </td>
+                    <td width="15%">
+                        @item.Nombre
+                    </td>
+                    <td width="10%">
+                        @item.Edad
+                    </td>
+                    <td width="10%">
+                        @item.Email
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

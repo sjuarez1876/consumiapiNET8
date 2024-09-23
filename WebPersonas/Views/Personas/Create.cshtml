@@ -1,0 +1,31 @@
+﻿@model Personas
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container shadow p-5">
+    <div class="row  pb-2">
+        <h1>Agregar Persona</h1>
+    </div>
+    <form method="post" class="form-floating">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Nombre" placeholder="Ingrese el nombre" />
+            <label asp-for="Nombre">Nombre</label>
+            <span asp-validation-for="Nombre" class="alert-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Edad" placeholder="Ingrese la Edad" />
+            <label asp-for="Email">Edad</label>
+            <span asp-validation-for="Email" class="alert-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Email" placeholder="Ingrese el correo" />
+            <label asp-for="Email">Correo</label>
+            <span asp-validation-for="Email" class="alert-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a asp-controller="Personas" asp-action="Index" class="btn btn-primary">Regresar a la lista</a>
+    </form>
+</div>
+
